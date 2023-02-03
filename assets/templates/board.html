@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../../css/board.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/add_task.css">
+    <script src="../../js/board.js"></script>
+    <script src="../../js/templates/board-templates.js"></script>
+    <script src="../../js/add_task.js"></script>
+    <script src="../../mini_backend.js"></script>
+
+    <title>Board</title>
+</head>
+
+<body onload="initBoard()">
+    <div id="addOpenTask" class="addOpenTask d-none">
+        <div id="openTask" class="openTask d-none">
+        </div>
+        <div class="addNewTask d-none" id="addNewTask">
+        </div>
+    </div>
+
+    
+
+
+    <div class="container" id="container">
+        <div class="header_headline_responsive"><span>Kanban Project Management Tool</span></div>
+        <div class="headlineAddTasks">
+            <h1>Board</h1>
+            <div class="inputAndButton">
+                <input placeholder="Find Task" id="search" onkeyup="filterBoard()"
+                    src="../img/board_img/magnifying-glass.png   ">
+                <div>
+                    <button class="buttonAndText" onclick="addNewTask('todo')">
+                        <p id="toBeReplaced">Add Task</p>
+                        <img id="addButton" src="../img/board_img/plus-button-white.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="taskSection">
+            <div class="tasks" id="theTasks">
+                <div class="status">
+                    <p>To Do</p>
+                    <img src="../img/board_img/plus-btn.png" id="plus" onclick="addNewTask('todo')">
+
+                </div>
+                <div class="dragArea" id="todo" ondrop="moveTo('todo'); removeHighlight('todo')"
+                    ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('todo')">
+
+                </div>
+            </div>
+
+            <div class="tasks">
+                <div class="status">
+                    <p>In Progress</p>
+                    <img src="../img/board_img/plus-btn.png" id="plus" onclick="addNewTask('progress')">
+                </div>
+
+                <div class="dragArea" id="inProgress" ondrop="moveTo('progress'); removeHighlight('inProgress')"
+                    ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
+
+                </div>
+            </div>
+            <div class="tasks">
+                <div class="status">
+                    <p>Awaiting Feedback</p>
+                    <img src="../img/board_img/plus-btn.png" id="plus" onclick="addNewTask('feedback')">
+                </div>
+
+                <div class="dragArea" id="awaitingFeedback"
+                    ondrop="moveTo('feedback'); removeHighlight('awaitingFeedback')"
+                    ondragleave="removeHighlight('awaitingFeedback')"
+                    ondragover="allowDrop(event); highlight('awaitingFeedback')">
+
+                </div>
+            </div>
+            <div class="tasks">
+                <div class="status">
+                    <p>Done</p>
+                    <img src="../img/board_img/plus-btn.png" id="plus" onclick="addNewTask('done')">
+                </div>
+
+                <div class="dragArea" id="done" ondrop="moveTo('done'); removeHighlight('done')"
+                    ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
+
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

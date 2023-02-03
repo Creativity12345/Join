@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/board.css">
+    <link rel="stylesheet" href="../../css/add_task.css">
+    <link rel="stylesheet" href="../../css/style-contact.css">
+    <script src="../../mini_backend.js"></script>
+    <script src="../../js/contact.js"></script>
+    <script src="../../js/templates/contact-templates.js"></script>  
+    <script src="../../js/board.js"></script>
+    <script src="../../js/templates/board-templates.js"></script>
+    <script src="../../js/add_task.js"></script>
+
+    
+    <title>Join - contacts</title>
+  </head>
+  <body class="body-contact" onload="initContacts()">
+
+    <div id="addOpenTask" class="addOpenTask d-none">
+      <div id="openTask" class="openTask d-none">
+      </div>
+      <div class="addNewTask d-none" id="addNewTask">
+      </div>
+    </div>
+
+    <div id="lightboxAddContact" class="lightbox-add-contact d-none">
+      <div class="lightbox-container">
+        <div class="lightbox-container-left">
+          <div class="contact-close-mobile d-none">
+            <div class="lightbox-input-pos-close-mobile" onclick="HideNewContactContainer()">X</div>
+          </div>
+          <div><img src="../../assets/img/menu-img/menu-logo.svg" alt=""></div>
+          <h1>Add contact</h1>
+          <p>Tasks are better with a team</p>
+          <div class="underline"></div>
+        </div>
+        <div class="lightbox-container-right">
+          <div class="lightbox-img">
+            <div><img src="../../assets/img/contact-img/user-line.png" alt="" srcset=""></div>
+          </div>
+            <div class="lightbox-input-pos">
+              <div class="lightbox-input-pos-close" onclick="HideNewContactContainer()">X</div>
+              <form action="" onsubmit="submitContact(); return false">
+                <label id="info">&nbsp;</label>
+                <input required id="AddName" placeholder="Name" type="text">
+                <input required id="AddEmail" placeholder="Email" type="email">
+                <input required id="AddNumber" placeholder="Phone" type="number">
+              <div class="lightbox-btn">
+                <button type="button" class="lightbox-btn-left" onclick="HideNewContactContainer()">Cancel x</button>
+                <button class="lightbox-btn-right" onclick="">Create contact <img src="../../assets/img/contact-img/check.png" alt="" srcset=""></button>
+              </div>
+              </form>                
+            </div>               
+          </div>       
+        </div>
+      </div>
+    </div>
+
+    <div id="lightboxMobileContact" class="lightbox-mobile-contact"></div>
+    <div id="lightboxEditContact" class="lightbox-edit-contact d-none"></div>
+
+    <div class="container" id="container">
+      <div class="container-mobile-btn">
+        <div class="add-contact-btn-mobile d-none" onclick="showNewContactContainer()">
+          <div class="add-contact-text-mobile">New contact</div>
+          <div>
+            <div><img src="../../assets/img/contact-img/add.icon.png" alt="" srcset=""></div>
+          </div>
+        </div>
+      </div>  
+      <div class="container-left" id="containerLeft">
+        
+        <div class="container-position" id="contactList"></div>       
+    </div>
+
+      <div id="containerRight" class="container-right">
+        <div class="headline">
+          <h1>Contacts</h1>
+          <div></div>
+          <h3>Better with a Team</h3>
+        </div>
+        <div class="add-contact-btn" onclick="showNewContactContainer()">
+          <div class="add-contact-text">New contact</div>
+          <div>
+            <div><img src="../../assets/img/contact-img/add.icon.png" alt="" srcset=""></div> 
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

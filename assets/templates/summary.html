@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/summary.css">
+    <link rel="stylesheet" href="../../css/css-templates/summary-media-605.css">
+    <script src="../../js/summary.js"></script>
+    <script src="../../js/side_bar.js"></script>
+</head>
+
+<body>
+    <div class="summary">
+        <div class="summary_header">
+            <div class="header_headline_responsive">Kanban Project Management Tool</div>
+            <div class="summary_headline">Summary</div>
+            <span>Everything in a nutshell!</span>
+            <div class="blue_line"></div>
+        </div>
+
+
+        <div class="summary_content">
+            <div class="overview">
+                <div class="board_infos">
+                    <div class="tasks" onclick="loadContent('board')">
+                        <div id="tasks-in-board">5</div>
+                        <span>Tasks in<br>
+                            Board</span>
+                    </div>
+                    <div class="tasks" onclick="loadContent('board')">
+                        <div id="tasks-in-progress">8</div>
+                        <span>Tasks In<br>
+                            Progress</span>
+                    </div>
+                    <div class="tasks" onclick="loadContent('board')">
+                        <div id="tasks-in-feedback">8</div>
+                        <span>Awaiting<br>
+                            Feedback</span>
+                    </div>
+                </div>
+                <div class="urgent_date" onclick="loadContent('board')">
+                    <div class="urgent">
+                        <div class="urgent_img">
+                            <img src="../img/summary-img/urgent.svg" alt="">
+                        </div>
+                        <div class="urgent_info">
+                            <div id="urgent-info-number" class="urgent_info_number">1</div>
+                            <div class="urgent_info_description">Urgent</div>
+                        </div>
+                    </div>
+                    <div class="upcoming_deadline_info">
+                        <div id="date-of-urgent" class="date">October 16, 2022</div>
+                        <div class="upcoming_deadline">Upcoming Deadline</div>
+                    </div>
+                </div>
+                <div class="to_do_and_done" onclick="loadContent('board')">
+                    <div class="to_do_and_done_section">
+                        <div id="to-do-img"></div>
+                        <div class="to_do_and_done_content">
+                            <div id="to-do-number">8</div>
+                            <span>To-do</span>
+                        </div>
+                    </div>
+                    <div class="to_do_and_done_section" onclick="loadContent('board')">
+                        <div id="done-img"></div>
+                        <div class="to_do_and_done_content">
+                            <div id="done-number">8</div>
+                            <span>Done</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="welcome" class="welcome">
+                <span class="good_morning">Good morning,</span><br>
+                <span class="account_name">Sofia Müller</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

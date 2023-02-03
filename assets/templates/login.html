@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+  <link rel="stylesheet" href="../../css/login.css" />
+  <link rel="stylesheet" href="../../css/fonts.css" />
+  <script src="../../mini_backend.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../js/templates/login-templates.js"></script>
+  <title>Login</title>
+</head>
+
+<body onload="render()">
+  
+ 
+
+  <div class="lightbox d-none" id="lightboxReset">
+    <span class="lightbox-reset">
+      <p>You reset your password</p>
+    </span>
+  </div>
+
+  <div class="lightbox d-none " id="lightboxEmail">
+    <span class="lightbox-email">
+      <p><img src="../../assets/img/login-img/SendCheck.png" alt="">An E-mail has been sent to you </p>
+    </span>
+  </div>
+
+  <!-- CONTAINER FOR LOGIN SCREEN -->
+
+  <div id="login" class="container">
+    <div class="container-logo">
+      <img class="login-logo" src="../../assets/img/contact-img/logo.png" alt="" srcset="" />
+    </div>  
+    <div class="container-login">
+      <div class="container-up">
+        <h1>Log in</h1>
+        <div class="underline-login"></div>
+      </div>
+
+      <form class="container-input" onsubmit="checkLogin(); return false;">
+        <div>
+          <label id="loginWrong">&nbsp; </label>
+          <input required id="loginEmail" type="email" name="" id="" placeholder="Email" />
+          <input required id="loginPassword" type="password" placeholder="Password" />
+        </div>  
+        
+        <div class="container-remember">
+          <div>
+            <input type="checkbox" id="remember" value="Boat" />
+            <label for="remember"> Remember me</label>
+          </div>  
+          <p onclick="showForgotScreen()">Forgot my Password</p>
+        </div>
+        <div class="container-button">
+          <button class="login-button">Log in</button>
+          <button type="button" class="guest-button" onclick="saveCurrentUserAsGuest()">
+            Guest Log in
+          </button>
+        </div>
+      </form> 
+    </div>
+    <div class="button-signup">
+      <p>Not ja Join user?</p>
+      <button onclick="openSignUp()">Sign up</button>
+    </div>
+  </div>
+
+  <!-- CONTAINER FOR SIGN UP SCREEN-->
+
+  <div class="container-signup d-none" id="signUp">
+    <div class="container-logo-signup">
+      <img class="signup-logo" src="../../assets/img/contact-img/logo.png" alt="" srcset="" />
+    </div>
+    <div class="container-signup-middle">
+
+      <div class="go-back-signup">
+        <img onclick="backToLogin()" class="go-back" src="../../assets/img/login-img/Vector.png" alt="">
+      </div>
+
+      <div class="container-up-signup">
+        <h1 class="signup-headline">Sign up</h1>
+        <div class="underline-login"> </div>
+      </div>
+
+      <form class="container-input-signup" action="" onsubmit="submitUser(); return false;">
+        <input required type="text" name="" id="signupName" placeholder="Name" />
+        <input required type="email" name="" id="signupEmail" placeholder="Email" />
+        <input  required type="password" id="signupPassword"placeholder="Password" />
+        <div class="container-button-signup">
+          <button class="login-button">Sign up</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+
+  
+
+  <!-- CONTAINER FOR FORGOT PASSWORD SCREEN -->
+
+  <div class="container-signup d-none " id="forgot">
+    
+    <div class="container-logo-forgot">
+      <img class="signup-logo" src="../../assets/img/contact-img/logo.png" alt="" srcset="" />
+    </div>
+    <div class="container-signup-middle-forgot">
+      <div class="go-back-forgot-container">
+        <img onclick="backToLogin()" class="go-back-forgot" src="../../assets/img/login-img/Vector.png" alt="">
+      </div>
+      <div class="container-up">
+        <h1 class="forgot-headline">I forgot my password</h1>
+        <div class="underline-login"> </div>
+        <p class="forgot-text">Don't worry! We will send you an email with the instructions to reset your password.</p>
+      </div>
+
+      <form class="container-input-forgot" action="" onsubmit="sendEmailtoChangePassword(); return false;">
+        <input class="forgot-input" required type="email" name="" id="forgotEmail" placeholder="Email" />
+        <div class="container-button-signup">
+          <button class="forgot-button">Send me the email</button>
+        </div>
+      </form>
+
+      
+    </div>
+  </div>
+
+  
+
+  <!-- CONTAINER FOR FORGOT PASSWORD SCREEN -->
+
+  <div class="container-reset d-none " id="reset"></div>
+
+      
+      
+
+    
+ 
+</body>
+
+</html>
+

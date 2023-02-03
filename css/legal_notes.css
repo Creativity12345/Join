@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    background: #F6F7F8;
+    font-family: 'Inter';
+}
+
+.container {
+    padding-left: 123px;
+    padding-top: 82px;
+    box-sizing: border-box;
+}
+
+.headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+}
+
+.headline div {
+    font-weight: 700;
+    font-size: 61px;
+    margin-bottom: 48px;
+}
+
+p {
+    width: 80%;
+}
+
+.legalText div {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 120%;
+}
+
+.legalText p {
+    margin-bottom: 35px;
+}
+
+.contact {
+    padding-bottom: 15px;
+}
+
+#backTo {
+    margin-top: -75px;
+    cursor: pointer;
+}
+
+@media (max-width: 1170px) {
+    .container {
+        padding-bottom: 80px;
+        padding-left: 7.71%;
+        padding-top: 82px;
+        padding-right: 7.71%;
+        height: unset;
+        box-sizing: unset;
+        overflow: unset;
+    }
+
+    .headline {
+        width: unset;
+    }
+
+    p {
+        width: unset;
+    }
+
+    #backTo {
+        margin-top: -200px;
+    }
+}
+
+@media (max-width: 485px) {
+    #backTo {
+        margin-top: -275px;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/side_bar.css">
+    <link rel="stylesheet" href="../../css/welcome.css">
+    <script src="../../js/side_bar.js"></script>
+    <script src="../../js/contact.js"></script>
+    <script src="../../js/add_task.js"></script>
+    <script src="../../js/board.js"></script>
+    <script src="../../js/summary.js"></script>
+    <script src="../../mini_backend.js"></script>
+    <script src="../../js/login.js"></script>
+    <script src="../../js/templates/contact-templates.js"></script>
+    <script src="../../js/templates/board-templates.js"></script>
+    <script src="../../js/templates/add_task_templates.js"></script>
+
+</head>
+
+<body class="body" onload="loadContent('summary')">
+
+    <div id="side-bar" class="side_bar" onclick="closeLogOutButton()">
+        <div class="menu">
+            <div class="menu_logo">
+                <img src="../img/menu-img/menu-logo.svg" alt="">
+            </div>
+            <div class="menu_under_logo">
+                <div class="menu_tabs">
+                    <div id="tab-summary" class="tab" onclick="loadContent('summary', 'todo')">
+                        <div class="tab_icon">
+                            <img src="../img/menu-img/summary-icon.svg" alt="">
+                        </div>
+                        <div class="tab_description">Summary</div>
+                    </div>
+                    <div id="tab-board" class="tab" onclick="loadContent('board', 'todo')">
+                        <div class="tab_icon">
+                            <img src="../img/menu-img/board-icon.svg" alt="">
+                        </div>
+                        <div class="tab_description">Board</div>
+                    </div>
+                    <div id="tab-add_task" class="tab" onclick="loadContent('add_task', 'todo')">
+                        <div class="tab_icon">
+                            <img src="../img/menu-img/add-task-icon.svg" alt="">
+                        </div>
+                        <div class="tab_description">Add Task</div>
+                    </div>
+                    <div id="tab-contacts" class="tab" onclick="loadContent('contacts', 'todo')">
+                        <div class="tab_icon">
+                            <img src="../img/menu-img/contacts-icon.svg" alt="">
+                        </div>
+                        <div class="tab_description">Contacts</div>
+                    </div>
+                </div>
+                <div id="tab-legal_notice" class="tab_legal_notice">
+                    <div class="tab_icon_legal_notice">
+                        <img src="../img/menu-img/legal-notice-icon.svg" alt="">
+                    </div>
+                    <div class="tab_description_legal_notice" onclick="loadContent('legal_notice')">Legal notice
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <div id="header-side-bar" class="header">
+                <img class="mobile_logo" src="../img/header-img/join-logo.svg" alt="">
+                <div id="header-headline" class="header_headline" style="display: none;">Kanban Project Management Tool
+                </div>
+                <div id="header-image" class="header_image">
+                    <img id="qoestion-mark-img" class="qoestion_mark_img" onclick="loadContent('help')"
+                        src="../img/header-img/question-mark-icon.svg" alt="">
+                    <img id="profile-img" class="profile_img" onclick="showLogOutButton(), save(event)"
+                        src="../img/header-img/blank-profile-img.svg" alt="">
+                </div>
+                <div id="log-out-area" class="log_out" style="display: none;" onclick="save(event)">
+                    <div id="log-out-area-help" style="display: none;" onclick="loadContent('help')">Help</div>
+                    <div id="log-out-area-legale_notice" style="display: none;" onclick="loadContent('legal_notice')">Legal notice</div>
+                    <div id="log-out-area-log-out" style="display: none;" onclick="location.href='../../assets/templates/login.html'">Log out</div>
+                </div>
+            </div>
+
+            <div id="content"></div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
