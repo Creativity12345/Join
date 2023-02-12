@@ -3,8 +3,8 @@
  * 
  *
  */
-let categoryColors = ['#FF65FF', '#00DBC1', '#83A5FF', '#FF0000'];
-let newCategoryColors = ['#FF65FF', '#00DBC1', '#83A5FF', '#FF0000', '#00D700', '#FF8200', '#F700C4', '#0039FF'];
+let categoryColors = ['#FFACEC', '#aeeeee', '#83A5FF', '#FA8072'];
+let newCategoryColors = ['#FFACEC', '#aeeeee', '#83A5FF', '#FA8072', '#5F9EA0', '#FF9472', '#E847AE', '#80c4de'];
 let categorys = ['Media', 'Backoffice', 'Marketing', 'Design'];
 let colorFromCategory = '#000000';
 let selectedColor = '#000000';
