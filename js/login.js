@@ -6,14 +6,14 @@ let currentUser;
  * Falls auf dem Backend noch nicht currentUser besteht, einen hinzufügen
  */
 async function loginInit() {
-  setURL('https://sebastian-michael.developerakademie.net/Join/smallest_backend_ever/');
+  setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever/');
   await downloadFromServer();
   await backend.setItem('currentUser', JSON.stringify(currentUser));
 }
 
 
 async function render() {
-  setURL('https://sebastian-michael.developerakademie.net/Join/smallest_backend_ever/');
+  setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever/');
   await downloadFromServer();
   allUser = JSON.parse(backend.getItem('allUser')) || [];
   loadLoginInfo();
