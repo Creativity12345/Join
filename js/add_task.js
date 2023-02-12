@@ -25,7 +25,7 @@ let taskStatus = 'todo';
  * 
  */
 async function initAddTask() {
-    setURL('https://samuel-haas.developerakademie.net/smallest_backend_ever/');
+    setURL('https://sebastian-michael.developerakademie.net/Join/smallest_backend_ever/');
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
     contact = JSON.parse(backend.getItem('contact')) || [];
