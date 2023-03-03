@@ -1,4 +1,4 @@
-setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever');
+setURL('https://sebastian-michael.de/smallest_backend_ever/');
 /**
  * Sucht nach dem Attribute w3-include-html um darin ein HtMl-template rein zu laden
  */
