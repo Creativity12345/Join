@@ -25,7 +25,7 @@ let taskStatus = 'todo';
  * 
  */
 async function initAddTask() {
-    setURL('https://sebastian-michael.de/smallest_backend_ever/');
+    setURL('https://sebastian-michael.de/smallest_backend_ever');
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
     contact = JSON.parse(backend.getItem('contact')) || [];
