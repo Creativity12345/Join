@@ -625,6 +625,7 @@
 }
 
 .lightbox-container {
+  position: relative;
   display: flex;
   width: 90%;
   height: 60%;
@@ -1177,11 +1178,6 @@ input[type=text], input[type=email], input[type=number] {
     display: none;
   }
 
-  .lightbox-img {
-    position: relative;
-    bottom: 70px;
-  }
-
   .lightbox-img-edit {
     position: relative;
     bottom: 80px;
@@ -1215,10 +1211,10 @@ input[type=text], input[type=email], input[type=number] {
   }
 
   .lightbox-input-pos-close-mobile {
+    position: absolute;
+    top: 20px;
     font-size: 24px;
     padding-right: 26px;
-    position: relative;
-    bottom: 70px;
     cursor: pointer;
   }
 
