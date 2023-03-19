@@ -35,7 +35,10 @@ function getMoreHTML(userCount, element) {
 function openTaskHTML(element) {
     return `<div class="openTaskKicker">
     <div class="category2 ${allTasks[element].category}" style="background-color: ${allTasks[element].color}">${allTasks[element].category}</div>
-    <div><img id="close" onclick="closeOpenTask(${element})" src="../img/board_img/close.svg"></div>
+    <div class="trash-and-close">
+    <div id="delete-btn" onclick="deleteSelectedTask(${element})"><img src="../img/board_img/trash.png"></div>
+    <img id="close" onclick="closeOpenTask(${element})" src="../img/board_img/close.svg">
+    </div>
     </div>
     <div id="openTaskHMobile">
             <h2>${allTasks[element].headline}</h2>
