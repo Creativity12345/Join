@@ -383,6 +383,7 @@ async function editTask(idTask) {
     renderAssignedToContent();
     checkButtonUrgency(idTask);
     addStyleForEditMode();
+    renderAssignedTo();
     if (editTaskStatus) {
         addUserToAssignedTo();
     }
