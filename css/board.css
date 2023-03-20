@@ -422,41 +422,6 @@ body {
     padding: 5px;
 }
 
-/*#content {
-    overflow-y: unset !important;
-    position: unset !important;
-    width: unset !important;
-
-
-    
-}*/
-
-
-/* category colors */
-
-/*.Design {
-    background-color: #FF7A00;
-}
-
-.Marketing {
-    background-color: #0038FF;
-}
-
-.Sales {
-    background-color: #FC71FF;
-
-}
-
-.Backoffice {
-    background-color: #1FD7C1;
-}
-
-.Media {
-    background-color: #FFC701;
-}*/
-
-/* category colors end */
-
 .exitBtn {
     margin-right: 40px;
     text-align: right;
