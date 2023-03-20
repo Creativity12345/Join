@@ -142,7 +142,7 @@ document.addEventListener('mouseup', function (e) {
     let container = document.getElementById('dropdownAssignedTo');
     if (container) {
         if (!container.contains(e.target)) {
-            renderAssignedToContent();
+            renderAssignedTo();
         }
     }
 });
@@ -474,11 +474,13 @@ function createNewTask() {
     let cat = document.getElementById('selectedCategory').innerText;
 
     const checkedNames = checkedContacts.map(cb => cb.name);
+
     let dueDate = document.getElementById('dueDate').value;
 
     const allSubtasks = document.querySelectorAll('#newSubtask input[type="checkbox"]');
     const checkedSubtasks = [...allSubtasks].filter(cb => cb.checked);
     const checkedSubtask = checkedSubtasks.map(cb => cb.name);
+
     let task = {
         'headline': headline,
         'desc': desc,
