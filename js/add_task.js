@@ -142,6 +142,7 @@ document.addEventListener('mouseup', function (e) {
     let container = document.getElementById('dropdownAssignedTo');
     if (container) {
         if (!container.contains(e.target)) {
+            renderAssignedToContent();
             closeAssignedToDropdown();
         }
     }
