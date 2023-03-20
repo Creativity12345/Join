@@ -142,7 +142,7 @@ document.addEventListener('mouseup', function (e) {
     let container = document.getElementById('dropdownAssignedTo');
     if (container) {
         if (!container.contains(e.target)) {
-            renderAssignedTo();
+            closeAssignedToDropdown();
         }
     }
 });
@@ -214,6 +214,22 @@ function convertHexToRgb(hexString) {
     let b = parseInt(hexString.slice(5, 7), 16);
 
     return [r, g, b];
+}
+
+
+/**
+ * Close the dropdown assigned to. (Only for board)
+ */
+function closeAssignedToDropdown() {
+    document.getElementById('dropdownAssignedTo').classList.remove('showAllCategorys');
+    document.getElementById('dropdownAssignedTo').classList.remove('categorysDropdownSelectHTML');
+    document.getElementById('dropdownAssignedTo').style.border = "1px solid #D1D1D1";
+
+    let content = document.getElementById('dropdownAssignedTo');
+
+    content.innerHTML = showAssignedToHTML();
+    renderAssignedToOptions();
+    addChecked();
 }
 
 
