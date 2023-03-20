@@ -39,10 +39,14 @@ body {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 50px;
     min-width: 33%;
     max-width: 90%;
+    max-height: 80vh;
+    overflow: auto;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 .openTaskCategory {

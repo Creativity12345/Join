@@ -372,7 +372,6 @@ function editInput(element) {
  * @param {*} idTask ID of the task
  */
 async function editTask(idTask) {
-    await saveSubtasksChecked(idTask);
     editTaskStatus = true;
     currentTask = idTask;
     let getStuff = document.getElementById('openTask');
