@@ -142,7 +142,7 @@ document.addEventListener('mouseup', function (e) {
     let container = document.getElementById('dropdownAssignedTo');
     if (container) {
         if (!container.contains(e.target)) {
-            renderAssignedToContent()
+            renderAssignedToContent();
         }
     }
 });
@@ -266,7 +266,6 @@ function addChecked() {
     for (let i = 0; i < checkedContacts.length; i++) {
         document.getElementById(checkedContacts[i].id).checked = true;
     }
-
 }
 
 
@@ -422,6 +421,7 @@ function checkForm() {
     return true;
 }
 
+
 /**
  * 
  * @returns if the date is in the past
@@ -436,6 +436,7 @@ function compareDate() {
     checkMonthAndDate(date, month, year, todayDate);
     return reducedDueDate < todayDate;
 }
+
 
 /**
  * if month or date to small is put a 0 befor
