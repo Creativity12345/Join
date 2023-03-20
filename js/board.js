@@ -631,7 +631,6 @@ function filterBoardProgress() {
             let result = progress[i];
 
             filter.innerHTML += newTaskHTML(result);
-            /*checkBgColor(element);*/
             renderTask(result);
             declarePriority(result);
         }
@@ -654,7 +653,6 @@ function filterBoardFeedback() {
             let result = feedback[i];
 
             filter.innerHTML += newTaskHTML(result);
-            /*checkBgColor(element);*/
             renderTask(result);
             declarePriority(result);
 
@@ -678,8 +676,6 @@ function filterBoardDone() {
             let result = done[i];
 
             filter.innerHTML += newTaskHTML(result);
-
-            /*checkBgColor(element);*/
             renderTask(result);
             declarePriority(result);
         }
