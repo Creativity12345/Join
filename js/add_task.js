@@ -484,6 +484,9 @@ async function submitTask() {
 }
 
 
+/**
+ * Creates a new task object with the details provided on the 'New Task' form.
+ */
 function createNewTask() {
     let headline = document.getElementById('headline').value;
     let desc = document.getElementById('desc').value;
