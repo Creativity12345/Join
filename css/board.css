@@ -125,7 +125,6 @@ body {
 }
 
 .headlineAddTasks button {
-
     font-style: normal;
     font-weight: 700;
     font-size: 13px;
@@ -156,7 +155,6 @@ body {
     height: 100%;
 
 }
-
 
 #plus {
     padding: 5px;
@@ -355,7 +353,7 @@ body {
 .openTaskKicker {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     width: 100%;
 }
