@@ -1,6 +1,0 @@
-{
-    "allTasks": "[{\"headline\":\"Example\",\"desc\":\"This is an example task\",\"id\":0,\"status\":\"todo\",\"category\":\"Example \",\"dueDate\":\"2023-03-19\",\"subtask\":[{\"sub\":[\"Try this example\"],\"idInputCheckbox\":[]}],\"color\":\"#5F9EA0\",\"bgcolor\":[],\"assignedTo\":[],\"prio\":\"Medium\"}]",
-    "contact": "[{\"name\":\"Emma Müller\",\"email\":\"emma.mueller@example.com\",\"phone\":\"49123456789\",\"bgcolor\":\"134,122,95\"},{\"name\":\"Maria Mustermann\",\"email\":\"maria.mustermann@gmail.com\",\"phone\":\"0920952345\",\"bgcolor\":\"50,68,17\"},{\"name\":\"Max Mustermann\",\"email\":\"mustermann@gmail.com\",\"phone\":\"12345678\",\"bgcolor\":\"110,105,47\"},{\"name\":\"Sophia Nguyen\",\"email\":\"sophia.nguyen@example.com\",\"phone\":\"441234567890\",\"bgcolor\":\"107,26,129\"},{\"name\":\"Tom Schmidt\",\"email\":\"tom.schmidt@example.com\",\"phone\":\"12345678901\",\"bgcolor\":\"40,75,92\"},{\"name\":\"Sarah Johnson\",\"email\":\"sarah.johnson@example.com\",\"phone\":\"12345678901\",\"bgcolor\":\"12,40,60\"}]",
-    "currentUser": "[]",
-    "allUser": "[{\"name\":\"Max Mustermann\",\"email\":\"m.mustermann@gmail.com\",\"password\":\"1234\"}]"
-}
