@@ -542,6 +542,9 @@ function filterTodo() {
 }
 
 
+/**
+ * Displays all tasks with a status of 'progress'
+ */
 function filterProgress() {
     progress = allTasks.filter(t => t['status'] == 'progress');
 
@@ -557,6 +560,9 @@ function filterProgress() {
 }
 
 
+/**
+ * Filters all tasks with feedback status and displays them on the waiting feedback section
+ */
 function filterFeedback() {
     feedback = allTasks.filter(t => t['status'] == 'feedback');
 
@@ -572,6 +578,9 @@ function filterFeedback() {
 }
 
 
+/**
+ * Filters allTasks array for elements with status 'done', displays them in HTML, and calls renderTask and declarePriority functions for each element.
+ */
 function filterDone() {
     done = allTasks.filter(t => t['status'] == 'done');
 
@@ -616,6 +625,9 @@ function filterBoardTodo() {
 }
 
 
+/**
+ * Filters the array of progress tasks based on the value of the search input field.
+ */
 function filterBoardProgress() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
@@ -638,6 +650,9 @@ function filterBoardProgress() {
 }
 
 
+/**
+ * Filters the board feedback by search input value
+ */
 function filterBoardFeedback() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
@@ -661,6 +676,9 @@ function filterBoardFeedback() {
 }
 
 
+/**
+ * Filters the 'done' list of tasks based on a search string and renders them to the DOM
+ */
 function filterBoardDone() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
