@@ -12,11 +12,11 @@ let timeIsup = false;
 let editTaskStatus = false;
 let currentTask;
 
+
 /**
  * 
  * Initializes the board, adds an ID to resp. tasks and renders the board
  */
-
 async function initBoard() {
     await downloadServer();
     await addId();
@@ -28,7 +28,6 @@ async function initBoard() {
  * 
  * Downloads JSON with tasks and contacts from server
  */
-
 async function downloadServer() {
     setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
@@ -42,7 +41,6 @@ async function downloadServer() {
  * Distributes the tasks to their resp. states und checks whether the progressbar 
  * should be displayed
  */
-
 function filterStatus() {
     filterTodo();
     filterProgress();
@@ -55,7 +53,6 @@ function filterStatus() {
 /**
  * Adds an ID to the tasks and pushes them into the JSON
  */
-
 async function addId() {
     let i = 0;
     await allTasks.map(n => {
@@ -71,7 +68,6 @@ async function addId() {
  * Checks if a progressbar should be displayed (Yes if there are subtasks)
  * 
  */
-
 function checkProgressbar() {
     for (let i = 0; i < allTasks.length; i++) {
         const progbar = allTasks[i];
@@ -92,7 +88,6 @@ function checkProgressbar() {
  * @param {string} progs gets the subtasks from JSON
  * @param {*} i iterates through IDs of elements
  */
-
 function checkProgressPercentage(progs, i) {
     let percent = progs.subtask[0].idInputCheckbox.length / progs.subtask[0].sub.length;
     percent = percent * 100;
@@ -107,10 +102,10 @@ function checkProgressPercentage(progs, i) {
  * Initiates dragging
  * @param {number} id Gets the ID of the current dragged element
  */
-
 function startDragging(id) {
     currentDraggedElement = id;
 }
+
 
 /**
  *  Checks whether board is displayed on desktop or mobile 
@@ -127,16 +122,19 @@ function checkMobileTrue(element) {
 }
 
 
+/**
+ * Checks if the current user agent is a mobile device.
+ */
 function ifCheckMobile() {
     return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
         || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))
 }
 
+
 /**
  * Opens the full task on clicking the resp. one in the board
  * @param {number} element ID of the task to be opened
  */
-
 async function openTask(element) {
     let openedTask = document.getElementById('openTask');
     document.getElementById('addOpenTask').classList.remove('d-none');
@@ -153,7 +151,6 @@ async function openTask(element) {
         document.getElementById(`circleAndNames`).innerHTML += `<div style="display: flex; align-items: center; margin-bottom: 5px">
             <div class="people" style="background: rgb(${colors}); margin-left: 2px">${people.split(' ').map(word => word[0]).join('').toUpperCase()}</div>
         <div class="personsName">${people}</div></div>`;
-
     }
 
     changePriorityButton(element);
@@ -165,7 +162,6 @@ async function openTask(element) {
  * checks if there are subtasks to be displayed in task view
  * @param {number} element ID of the task to be checked
  */
-
 async function checkSubtasks(element) {
     let subs = document.getElementById('changeSubs');
     if (allTasks[element]['subtask'].length > 0 && allTasks[element]['subtask'][0].sub.length > 0) {
@@ -184,7 +180,6 @@ async function checkSubtasks(element) {
  * Shows subtasks that are aleady checked (i.e. done)
  * @param {number} idTask adds an ID to the task
  */
-
 async function addSubtasksChecked(idTask) {
     await downloadServer();
     if (allTasks[idTask].subtask[0].idInputCheckbox.length > 0) {
@@ -220,7 +215,6 @@ function changePriorityButton(element) {
  * closes the 'openTask' view.
  * @param {number} idTask ID of the task
  */
-
 async function closeOpenTask(idTask) {
     document.getElementById('addOpenTask').classList.add('d-none');
     document.body.classList.remove('noScroll');
@@ -250,6 +244,7 @@ async function saveSubtasksChecked(idTask) {
     }
 }
 
+
 /**
  * closes the view of 'addTask'
  * 
@@ -259,7 +254,6 @@ function closeAddTask() {
     document.getElementById('addNewTask').classList.add('d-none');
     document.body.classList.remove('noScroll');
     document.getElementById('addOpenTask').classList.remove('darker');
-
 }
 
 
@@ -344,7 +338,6 @@ function filterBoard() {
  *Changes the style of the button according to its urgency
  * @param {number} element all elements of JSON 'allTasks'
  */
-
 function declarePriority(element) {
     let shownPriority = document.getElementById(`prio${element.id}`);
     shownPriority.innerHTML = '';
@@ -378,7 +371,6 @@ function editInput(element) {
  * opens the view edit task
  * @param {*} idTask ID of the task
  */
-
 async function editTask(idTask) {
     await saveSubtasksChecked(idTask);
     editTaskStatus = true;
@@ -398,6 +390,9 @@ async function editTask(idTask) {
 }
 
 
+/**
+ * delete the task, after the user clicking the trash icon
+ */
 async function deleteSelectedTask(idTask) {
     currentTask = idTask;
     allTasks.splice(idTask, 1);
@@ -412,14 +407,12 @@ async function deleteSelectedTask(idTask) {
 /**
  * displays all users that have already been assigned to the resp. task
  */
-
 function addUserToAssignedTo() {
     for (let i = 0; i < allTasks[currentTask].assignedTo.length; i++) {
         let name = allTasks[currentTask].assignedTo[i];
         let InputField = document.querySelectorAll(`#assignedToOptions input[name="${name}"]`);
         InputField[0].checked = true;
     }
-
 }
 
 
@@ -427,7 +420,6 @@ function addUserToAssignedTo() {
  * Gets changed input from input fields; saves them in an array.
  * @param {number} element ID of the elements in JSON
  */
-
 async function editTasks(element) {
     saveChecked();
     editTaskStatus = false;
@@ -459,8 +451,6 @@ async function editTasks(element) {
         'bgcolor': bgcolor,
         'assignedTo': checkedNames,
         'prio': prio
-
-
     };
 
     await changeTask(task);
@@ -471,7 +461,6 @@ async function editTasks(element) {
 /**
  * adds CSS for edit view
  */
-
 function addStyleForEditMode() {
     document.getElementById('prioButtons').style = 'justify-content: space-between;';
     document.getElementById('editDueDate').style = 'box-sizing: border-box; height: 51px ;width: 100%;';
@@ -483,7 +472,6 @@ function addStyleForEditMode() {
 /**
  * deletes CSS for edit view
  */
-
 function deleteStyleForEditMode() {
     document.getElementById('prioButtons').style = '';
     document.getElementById('editDueDate').style = '';
@@ -496,7 +484,6 @@ function deleteStyleForEditMode() {
  * Pushes edited information to backend
  * @param {Array} task Array with stored information of edit task
  */
-
 async function changeTask(task) {
     allTasks.push(task);
     await backend.setItem('allTasks', JSON.stringify(allTasks));
@@ -507,7 +494,6 @@ async function changeTask(task) {
  * Changes the style of the button according to its urgency
  * @param {number} element all elements of JSON 'allTasks'
  */
-
 function checkButtonUrgency(element) {
     if (allTasks[element].prio == 'Medium') {
         document.getElementById('mediumButton').classList.add('mediumButtonFocused');
@@ -526,7 +512,6 @@ function checkButtonUrgency(element) {
 /**
  * closes edit view
  */
-
 function closeEditFunction() {
     editTaskStatus = false;
     document.getElementById('openTask').classList.add('d-none');
@@ -540,10 +525,8 @@ function closeEditFunction() {
 
 
 /**
- * 
  * Filters board on load
  */
-
 function filterTodo() {
 
     todo = allTasks.filter(t => t['status'] == 'todo');
@@ -554,7 +537,7 @@ function filterTodo() {
         const element = todo[i];
         document.getElementById('todo').innerHTML += newTaskHTML(element);
 
-        redernTask(element);
+        renderTask(element);
         declarePriority(element);
     }
 }
@@ -569,9 +552,8 @@ function filterProgress() {
         const element = progress[i];
         document.getElementById('inProgress').innerHTML += newTaskHTML(element);
 
-        redernTask(element);
+        renderTask(element);
         declarePriority(element);
-
     }
 }
 
@@ -585,7 +567,7 @@ function filterFeedback() {
         const element = feedback[i];
         document.getElementById('awaitingFeedback').innerHTML += newTaskHTML(element);
 
-        redernTask(element);
+        renderTask(element);
         declarePriority(element);
     }
 }
@@ -601,9 +583,8 @@ function filterDone() {
 
         document.getElementById('done').innerHTML += newTaskHTML(element);
 
-        redernTask(element);
+        renderTask(element);
         declarePriority(element);
-
     }
 }
 
@@ -612,7 +593,6 @@ function filterDone() {
  * 
  * Filters the board after search
  */
-
 function filterBoardTodo() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
@@ -630,18 +610,16 @@ function filterBoardTodo() {
 
             filter.innerHTML += newTaskHTML(result);
 
-            redernTask(result);
+            renderTask(result);
             declarePriority(result);
         }
     }
-
 }
 
 
 function filterBoardProgress() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
-
 
     let filter = document.getElementById('inProgress');
     filter.innerHTML = '';
@@ -655,19 +633,16 @@ function filterBoardProgress() {
 
             filter.innerHTML += newTaskHTML(result);
             /*checkBgColor(element);*/
-            redernTask(result);
+            renderTask(result);
             declarePriority(result);
-
         }
     }
-
 }
 
 
 function filterBoardFeedback() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
-
 
     let filter = document.getElementById('awaitingFeedback');
     filter.innerHTML = '';
@@ -681,12 +656,11 @@ function filterBoardFeedback() {
 
             filter.innerHTML += newTaskHTML(result);
             /*checkBgColor(element);*/
-            redernTask(result);
+            renderTask(result);
             declarePriority(result);
 
         }
     }
-
 }
 
 
@@ -707,7 +681,7 @@ function filterBoardDone() {
             filter.innerHTML += newTaskHTML(result);
 
             /*checkBgColor(element);*/
-            redernTask(result);
+            renderTask(result);
             declarePriority(result);
         }
     }
@@ -719,8 +693,7 @@ function filterBoardDone() {
  * is displayed
  * @param {number} element all elements of JSON 'allTasks'
  */
-
-function redernTask(element) {
+function renderTask(element) {
     startDragging(element.id);
     let userCount = 0;
     for (let j = 0; j < element.assignedTo.length; j++) {
