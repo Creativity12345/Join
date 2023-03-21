@@ -1,8 +1,3 @@
-/**
- * All required global variables with their arrays
- * 
- *
- */
 let categoryColors = ['#FFACEC', '#aeeeee', '#83A5FF', '#FA8072'];
 let newCategoryColors = ['#FFACEC', '#aeeeee', '#83A5FF', '#FA8072', '#5F9EA0', '#FF9472', '#E847AE', '#80c4de'];
 let categorys = ['Media', 'Backoffice', 'Marketing', 'Design'];
@@ -22,7 +17,6 @@ let taskStatus = 'todo';
 
 /**
  * Function that loads all tasks from server
- * 
  */
 async function initAddTask() {
     setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever');
@@ -39,7 +33,6 @@ async function initAddTask() {
 
 /**
  * Function that displays the category content
- * 
  */
 function renderCategoryContent() {
     document.getElementById('cat').innerHTML = showCategoryContentHTML();
@@ -51,7 +44,6 @@ function renderCategoryContent() {
 
 /**
  * Function that displays the basic category structure
- * 
  */
 function renderCategorys() {
     document.getElementById('dropdownCategory').classList.toggle('showAllCategorys');
@@ -67,7 +59,6 @@ function renderCategorys() {
 
 /**
  * Function that displays the different category options
- * 
  */
 function renderCategorysOptions() {
     let options = document.getElementById('categorysOptions');
@@ -83,7 +74,6 @@ function renderCategorysOptions() {
 
 /**
  * Function that adds a new category
- * 
  */
 function addNewCategory() {
     document.getElementById('categorysDropdownSelect').classList.toggle('categorysDropdownSelect');
@@ -96,7 +86,6 @@ function addNewCategory() {
 
 /**
  * Function that displays the new possible colors for a new category
- * 
  */
 function renderCategoryColors() {
     document.getElementById('categoryColors').classList.remove('d-none');
@@ -117,8 +106,6 @@ function renderCategoryColors() {
  * Adds a click event listener to each element in the colorDots NodeList.
  * When an element is clicked, the function scales up the element and increases its opacity,
  * while resetting the transform and opacity of all other elements in the NodeList.
- *
- * @param {Event} event - The click event object.
  */
 function addClickEventForColorDot() {
     let colorDots = document.querySelectorAll('.colorDot');
@@ -151,7 +138,6 @@ document.addEventListener('mouseup', function (e) {
 
 /**
  * Adds the new category to the array and sets the color for the category
- * 
  */
 function pushNewCategory() {
     let newCategory = document.getElementById('inputFieldCategory').value;
@@ -170,9 +156,6 @@ function pushNewCategory() {
 
 /**
  * Function that displays the selected category
- * 
- * @param {string} category
- * @param {string} hexString
  */
 function renderSelectedCategory(category, hexString) {
     const colorObject = convertHexToRgb(hexString);
@@ -187,7 +170,6 @@ function renderSelectedCategory(category, hexString) {
 
 /**
  * Sets the selected color for a new category
- * @param {string} color
  */
 function selectColor(color) {
     selectedColor = color;
@@ -196,7 +178,6 @@ function selectColor(color) {
 
 /**
  * Sets the selected color for the selected category
- * @param {string} colorCategory
  */
 function declareColorFromCategory(colorCategory) {
     colorFromCategory = colorCategory;
@@ -205,9 +186,6 @@ function declareColorFromCategory(colorCategory) {
 
 /**
  * Converts a hexadecimal string into an array of red, green and blue values
- *
- * @param {string} hexString
- * @returns {number[]}
  */
 function convertHexToRgb(hexString) {
     let r = parseInt(hexString.slice(1, 3), 16);
@@ -236,7 +214,6 @@ function closeAssignedToDropdown() {
 
 /**
  * Function that displays the contacts content
- * 
  */
 function renderAssignedToContent() {
     document.getElementById('assigned').innerHTML = showAssignedToContentHTML();
@@ -245,7 +222,6 @@ function renderAssignedToContent() {
 
 /**
  * Function that displays the contacts basic structure
- * 
  */
 function renderAssignedTo() {
     document.getElementById('dropdownAssignedTo').classList.toggle('showAllCategorys');
@@ -262,7 +238,6 @@ function renderAssignedTo() {
 
 /**
  * Function that displays the different contacts options
- * 
  */
 function renderAssignedToOptions() {
     let names = document.getElementById('assignedToOptions');
@@ -277,7 +252,6 @@ function renderAssignedToOptions() {
 
 /**
  * Function that set the checkedContacts on true 
- * 
  */
 function addChecked() {
     for (let i = 0; i < checkedContacts.length; i++) {
@@ -288,7 +262,6 @@ function addChecked() {
 
 /**
  * Function that save the checkedContacts
- * 
  */
 function saveChecked() {
     let contactCheckboxes = document.querySelectorAll('#assigned input[type="checkbox"]');
@@ -329,8 +302,6 @@ function renderPrioButtons() {
  * When a button is clicked, first the CSS class "urgentButtonFocused", "mediumButtonFocused" or "lowButtonFocused" is removed from all buttons
  * Then the clicked button is given the class "urgentButtonFocused", "mediumButtonFocused" or "lowButtonFocused" depending on which button was clicked
  * The name of the selected priority level is then stored in the variable "selectedPriority"
- *
- * @param {Event} event
  */
 function toggleButtonFocus(event) {
     document.getElementById('prioButtons').style.border = "unset";
@@ -347,7 +318,6 @@ function toggleButtonFocus(event) {
 
 /**
  * Function that displays the subtask content
- * 
  */
 function renderSubtaskContent() {
     document.getElementById('subs').innerHTML = showSubtaskContentHTML();
@@ -365,7 +335,6 @@ function renderSubtaskContent() {
 
 /**
  * Function that displays the basic structure for the input field of new subtasks
- * 
  */
 function renderSubtask() {
     document.getElementById('inputSubtask').classList.remove('inputSubtask');
@@ -379,7 +348,6 @@ function renderSubtask() {
 
 /**
  * Function that adds a new subtask to the array
- * 
  */
 function addSubtask() {
     let newSubtask = document.getElementById('inputFieldSubtask').value;
@@ -393,7 +361,6 @@ function addSubtask() {
 
 /**
  * Function that clears all fields
- * 
  */
 function clearFields() {
     document.getElementById('form').reset();
@@ -439,8 +406,8 @@ function checkForm() {
 
 
 /**
- * 
- * @returns if the date is in the past
+ * Compare the due date to the current date.
+ * @returns {boolean} true if reducedDueDate is less than todayDate, false if it is greater or equal.
  */
 function compareDate() {
     let date = new Date().getDate();
@@ -523,8 +490,6 @@ function createNewTask() {
 
 /**
  * Function that adds a task to the list of all tasks and saves it on the server
- * 
- * @param {Object} task
  */
 async function addThisTask(task) {
     allTasks.push(task);
@@ -546,7 +511,6 @@ function clearForm() {
 
 /**
  * to stop the onclick
- * @param {Event} event The click event object.
  */
 function save(event) {
     event.stopPropagation();
