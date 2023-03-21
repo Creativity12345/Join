@@ -372,7 +372,6 @@ function editInput(element) {
  * @param {*} idTask ID of the task
  */
 async function editTask(idTask) {
-    editTaskStatus = true;
     currentTask = idTask;
     let getStuff = document.getElementById('openTask');
     getStuff.innerHTML = '';
@@ -383,9 +382,8 @@ async function editTask(idTask) {
     checkButtonUrgency(idTask);
     addStyleForEditMode();
     renderAssignedTo();
-    if (editTaskStatus) {
-        addUserToAssignedTo();
-    }
+    addUserToAssignedTo();
+    saveChecked();
 }
 
 
@@ -407,6 +405,7 @@ async function deleteSelectedTask(idTask) {
  * displays all users that have already been assigned to the resp. task
  */
 function addUserToAssignedTo() {
+    clearAssignedToCheckBox();
     for (let i = 0; i < allTasks[currentTask].assignedTo.length; i++) {
         let name = allTasks[currentTask].assignedTo[i];
         let InputField = document.querySelectorAll(`#assignedToOptions input[name="${name}"]`);
@@ -416,12 +415,22 @@ function addUserToAssignedTo() {
 
 
 /**
+ * clear checkboxes to delete old saves
+ */
+function clearAssignedToCheckBox() {
+    for (let i = 0; i < contact.length; i++) {
+        let name = contact[i].name;
+        let InputField = document.querySelectorAll(`#assignedToOptions input[name="${name}"]`);
+        InputField[0].checked = false;
+    }
+}
+
+
+/**
  * Gets changed input from input fields; saves them in an array.
  * @param {number} element ID of the elements in JSON
  */
 async function editTasks(element) {
-    saveChecked();
-    editTaskStatus = false;
     let headline = document.getElementById('editHeadline').value;
     let desc = document.getElementById('editDesc').value;
     let dueDate = document.getElementById('editDueDate').value;
@@ -432,13 +441,9 @@ async function editTasks(element) {
 
     let color = allTasks[element].color;
     let bgcolor = bgContactColor;
-
-    const contactCheckboxes = document.querySelectorAll('#assigned input[type="checkbox"]');
-    const checkedContacts = [...contactCheckboxes].filter(cb => cb.checked);
     const checkedNames = checkedContacts.map(cb => cb.name);
 
-    allTasks.splice(element, 1);
-    let task = {
+    allTasks[element] = {
         'headline': headline,
         'desc': desc,
         'id': element,
@@ -452,7 +457,7 @@ async function editTasks(element) {
         'prio': prio
     };
 
-    await changeTask(task);
+    await updateBackend();
     closeEditFunction();
 }
 
@@ -483,8 +488,7 @@ function deleteStyleForEditMode() {
  * Pushes edited information to backend
  * @param {Array} task Array with stored information of edit task
  */
-async function changeTask(task) {
-    allTasks.push(task);
+async function updateBackend(task) {
     await backend.setItem('allTasks', JSON.stringify(allTasks));
 }
 
@@ -496,14 +500,17 @@ async function changeTask(task) {
 function checkButtonUrgency(element) {
     if (allTasks[element].prio == 'Medium') {
         document.getElementById('mediumButton').classList.add('mediumButtonFocused');
+        selectedPriority = allTasks[element].prio;
     }
 
     if (allTasks[element].prio == 'Urgent') {
         document.getElementById('urgentButton').classList.add('urgentButtonFocused');
+        selectedPriority = allTasks[element].prio;
     }
 
     if (allTasks[element].prio == 'Low') {
         document.getElementById('lowButton').classList.add('lowButtonFocused');
+        selectedPriority = allTasks[element].prio;
     }
 }
 
