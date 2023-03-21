@@ -102,11 +102,16 @@ function showSingleContactMobileTemplate(i) {
     <div class="add-task-name">
       <div>${contacts[i]['name']} </div>
     </div>
-    <div class="add-task-btn" onclick="addNewTask('todo')">
+    <div class="add-task-delete">
+      <div class="add-task-btn" onclick="addNewTask('todo')">
       <div class="add-task-btn-plus">
-        <div><img src="../../assets/img/contact-img/add_blue.png" alt="" srcset=""></div>
+          <div><img src="../../assets/img/contact-img/add_blue.png" alt="" srcset=""></div>
+        </div>
+        <div class="add-task-btn-text">Add Task</div>
       </div>
-      <div class="add-task-btn-text">Add Task</div>
+      <div onclick="deleteContact(${i})">
+        <img class="delete" src="../../assets/img/board_img/trash.png">
+      </div>
     </div>
   </div>
 </div>
