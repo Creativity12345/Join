@@ -184,7 +184,6 @@ async function deleteContact(i){
   generateContactlist();
   showSingleContact(i);
   await backend.setItem('contact', JSON.stringify(contacts));
-  window.close();
 }
 
 
