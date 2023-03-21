@@ -913,6 +913,11 @@ input[type=text], input[type=email], input[type=number] {
   overflow-y: unset;
 }
 
+.delete{
+  width: 25px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1330px) {
 
   .headline h1 {

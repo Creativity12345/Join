@@ -1,6 +1,6 @@
-let letters = [];
-  
+let letters = [];  
 let contacts;
+
 
 async function initContacts() {
     setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever');
@@ -9,6 +9,7 @@ async function initContacts() {
     sortArray();
     generateContactlist();
 }
+
 
 function submitContact() {
   let name = document.getElementById('AddName').value;
@@ -45,6 +46,7 @@ function randomBgColor(){
   result = `${x},`+`${y},`+`${z}`;
 }
   
+
 /**
  * Add new contact to Arrray
  * @param {JSON} contact 
@@ -55,6 +57,7 @@ async function addContact(contact) {
   clearInput();
 }
 
+
 /**
  * Clear input fields
  */
@@ -64,6 +67,7 @@ function clearInput () {
   document.getElementById('AddNumber').value= '';
   document.getElementById('info').innerHTML = '&nbsp;'; 
 }
+
 
 /**
  * function to sort the array alphabetical
@@ -79,6 +83,7 @@ function sortArray(){
     })   
   }
 }
+
 
 /**
  * generate the contactlist with data from array contacts
@@ -102,11 +107,12 @@ function generateContactlist() {
   }  
 }
 
+
 /**
  * function to show the single contact on the right side and on the mobile scrren
  * @param {number} i // number of array
  */
-function showSingleContact(i){       
+function showSingleContact(i){      
   if(window.innerWidth > 1170 ){
     document.getElementById('containerRight').innerHTML = showSingleContactTemplate(i);
   } else {
@@ -114,6 +120,7 @@ function showSingleContact(i){
     document.getElementById('lightboxMobileContact').innerHTML = showSingleContactMobileTemplate(i);
   }
 }
+
 
 /**
  * function to show the edit contact screen
@@ -136,6 +143,7 @@ function EditInput(i){
   document.getElementById('editEmail').value = `${contacts[i]['email']}`;
   document.getElementById('editNumber').value = `${contacts[i]['phone']}`;
 }
+
 
 /**
  * function to edit contacts
@@ -161,35 +169,40 @@ function editContacts(i) {
 }
 
 
+/**
+ * delete contact
+ */
+async function deleteContact(i){
+  contacts.splice(i,1);
+  generateContactlist();
+  await backend.setItem('contact', JSON.stringify(contacts));
+}
+
+
 /*Functions to hide or show different screens*/
 function closeEditContact(){
   document.getElementById('lightboxEditContact').classList.add('d-none');
 }
+
 
 function hideMobileContacts(){
   document.getElementById('container').classList.remove('d-none');
   document.getElementById('lightboxMobileContact').classList.add('d-none');
 }
 
+
 function showNewContactContainer() {
   document.getElementById('lightboxAddContact').classList.remove('d-none');
 }
+
 
 function HideNewContactContainer() {
     document.getElementById('lightboxAddContact').classList.add('d-none');
     clearInput();
 }
 
+
 function MobileSingleContactScreen(){
   document.getElementById('lightboxMobileContact').classList.remove('d-none')
   document.getElementById('container').classList.add('d-none');
 }
-
-
-
-
-
-
-
-
-

@@ -1,16 +1,16 @@
-function generateLetterbox(firstLetter){
-    return /*html*/ `
+function generateLetterbox(firstLetter) {
+  return /*html*/ `
     <div class="letterbox"  id="letterbox${firstLetter}">
     <div class="first-letter">
       <p>${firstLetter}</p>
     </div>
     <div class="between-line"><p></p></div>       
   </div>
-`; 
+`;
 }
 
 function generateContactinConttaclist(i, contact) {
-    return /*html*/ `
+  return /*html*/ `
     <div class="contact" onclick="showSingleContact(${i})">
         <p class="beginner-letter" style="background: rgb(${contact['bgcolor']})">${contact['name'].split(' ').map(word => word[0]).join('').toUpperCase()}</p>
         <div class="contact-name-div">
@@ -22,7 +22,7 @@ function generateContactinConttaclist(i, contact) {
 }
 
 function showSingleContactTemplate(i) {
-    return /*html*/ `
+  return /*html*/ `
     <div class="headline">
     <h1>Contacts</h1>
     <div></div>
@@ -55,6 +55,9 @@ function showSingleContactTemplate(i) {
       </div>
       <div class="edit-contact" >Edit Contact</div>
     </div>
+    <div onclick="deleteContact(${i})">
+      <img class="delete" src="../../assets/img/board_img/trash.png">
+    </div>
   </div>
   <div class="contact-information-down">
     <div class="contact-information-fr102">
@@ -76,7 +79,7 @@ function showSingleContactTemplate(i) {
 }
 
 function showSingleContactMobileTemplate(i) {
-    return /*html*/`
+  return /*html*/`
     <div class="mobile-headline">
       <div class="headline">
         <p>Kanban Project Management Tools</p>    
@@ -136,7 +139,7 @@ function showSingleContactMobileTemplate(i) {
 }
 
 function showEditContact(i) {
-    return /*html*/ `
+  return /*html*/ `
     <div class="lightbox-container">
           <div class="lightbox-container-left">
             <div class="contact-close-mobile d-none">
