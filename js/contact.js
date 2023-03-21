@@ -2,6 +2,9 @@ let letters = [];
 let contacts;
 
 
+/**
+ * Downloads data from the backend and initializes the contact list
+ */
 async function initContacts() {
     setURL('https://sebastian-michael.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
@@ -11,6 +14,9 @@ async function initContacts() {
 }
 
 
+/**
+ * Add new contact to the list
+ */
 function submitContact() {
   let name = document.getElementById('AddName').value;
   let email = document.getElementById('AddEmail').value;
@@ -185,23 +191,35 @@ function closeEditContact(){
 }
 
 
+/**
+ * Hide the mobile contact lightbox and reveal the main container.
+ */
 function hideMobileContacts(){
   document.getElementById('container').classList.remove('d-none');
   document.getElementById('lightboxMobileContact').classList.add('d-none');
 }
 
 
+/**
+ * Shows the HTML element with the ID 'lightboxAddContact' by removing the 'd-none' class from its classList.
+ */
 function showNewContactContainer() {
   document.getElementById('lightboxAddContact').classList.remove('d-none');
 }
 
 
+/**
+ * Hides the new contact container and clears input.
+ */
 function HideNewContactContainer() {
     document.getElementById('lightboxAddContact').classList.add('d-none');
     clearInput();
 }
 
 
+/**
+ * Displays a single contact mobile screen by removing the "d-none" class from the respective element and adding it to another element.
+ */
 function MobileSingleContactScreen(){
   document.getElementById('lightboxMobileContact').classList.remove('d-none')
   document.getElementById('container').classList.add('d-none');
